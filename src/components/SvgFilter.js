@@ -40,6 +40,7 @@ class SvgFilter extends Component {
                          0 0 1 0 0
                         -1 0 0 1 0'/>   
   <feComposite  operator='out' in='SourceGraphic' in2='whiteToTransparent' />   
+  {/* <feComposite  operator='in' in='SourceGraphic' in2='whiteToTransparent' />    */}
 
 			</filter>
                 </defs>

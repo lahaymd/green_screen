@@ -4,9 +4,9 @@ const initialState = {
     items: [],
     item: {},
     red: [1 , 0],
-    redStart: Array(256).fill(0),
-    greenStart: Array(256).fill(0),
-    blueStart: Array(256).fill(0)
+    redStart: Array(256).fill(0).map( (item,index) => index/256 ),
+    greenStart: Array(256).fill(0).map((item, index) => index / 256),
+    blueStart: Array(256).fill(0).map((item, index) => index / 256)
 }
 
 export default function(state = initialState, action) {
