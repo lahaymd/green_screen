@@ -1,0 +1,6 @@
+export const FETCH_POSTS = 'FETCH_POSTS';
+export const NEW_POST = 'NEW_POST';
+export const RED_CHANNEL = 'RED_CHANNEL';
+export const RED_CHANNEL_INPUT = 'RED_CHANNEL_INPUT';
+export const GREEN_CHANNEL_INPUT = 'GREEN_CHANNEL_INPUT';
+export const BLUE_CHANNEL_INPUT = 'BLUE_CHANNEL_INPUT';
