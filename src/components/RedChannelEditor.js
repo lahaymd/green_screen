@@ -17,6 +17,8 @@ class RedChannelEditor extends Component {
     handleRedChange = (e) => {
         console.log('changed'+ e.target.value);
         console.log('props ' +JSON.stringify(this.props));
+      
+        
         let a = this.props.r.slice();
         console.log('a ' + a);
        let b = a.map((item,index) => index >= e.target.value  ? item = index/256 : item = 0)

@@ -30,6 +30,29 @@ export const  createPost = (postData) => dispatch => {
         }))
     
 }
+export const  updateRedStart = (redValues) => dispatch => {
+    console.log('updating red values');
+    // let data = { redState:redValues};
+    
+    fetch('/green_screen', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify({redStart: redValues})
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log('data:'+ JSON.stringify(data));
+            dispatch(
+            {
+            type: RED_CHANNEL_INPUT,
+            payload: redValues
+        })})
+    
+}
 
 export const updateRed = (redValues) => dispatch => {dispatch({
                                 type: RED_CHANNEL,
@@ -37,11 +60,13 @@ export const updateRed = (redValues) => dispatch => {dispatch({
                             })
 }
 
-export const updateRedStart = (redValues) => dispatch => {dispatch({
-                                type: RED_CHANNEL_INPUT,
-                                payload: redValues
-                            })
-}
+// export const updateRedStart = (redValues) => dispatch => {dispatch({
+//                                 type: RED_CHANNEL_INPUT,
+//                                 payload: redValues
+//                             })
+// }
+
+
 export const updateGreenStart = (greenValues) => dispatch => {dispatch({
                                 type: GREEN_CHANNEL_INPUT,
                                 payload: greenValues

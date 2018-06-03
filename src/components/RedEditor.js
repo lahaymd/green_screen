@@ -14,7 +14,13 @@ class RedEditor extends Component {
 
     handleEnter = (e) => {
         console.log(e.target.id);
+        console.log(e);
+        
         e.target.classList.toggle('hovered')
+        // if(
+
+        //     document.addEventListener('keydown', e => alert(e.keyCode))
+        // )
         // console.log('props ' + JSON.stringify(this.props));
         let a = this.props.r.slice();
         // console.log('a ' + a);
