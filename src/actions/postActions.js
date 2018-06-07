@@ -34,7 +34,7 @@ export const  updateRedStart = (redValues) => dispatch => {
     console.log('updating red values');
     // let data = { redState:redValues};
     
-    fetch('https://green-screen-api.herokuapp.com/green_screen', {
+    fetch('/green_screen', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
