@@ -27,6 +27,10 @@ mongoose.connect('mongodb://lahaymd:zz040577@ds127998.mlab.com:27998/mikelahay')
 app.use('/', index);
 app.use('/green_screen', green_screen);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
