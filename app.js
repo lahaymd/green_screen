@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
-var index = require('./routes/index');
+// var index = require('./routes/index');
 var green_screen = require('./routes/green_screen');
 
 var app = express();
@@ -21,10 +21,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'client', 'public')));
 
 mongoose.connect('mongodb://lahaymd:zz040577@ds127998.mlab.com:27998/mikelahay');
-app.use('/', index);
+// app.use('/', index);
 app.use('/green_screen', green_screen);
 
 app.get("*", (req, res) => {
