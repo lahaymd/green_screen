@@ -2,13 +2,13 @@
   "name": "server",
   "version": "0.0.0",
   "private": true,
-    "scripts": {
-      "start": "node ./server/bin/www",
-          "heroku-postbuild": "cd src && npm install  && npm install && npm run build"
-    },
-    "engines": {
-      "node": "8.9.2"
-    },
+  "scripts": {
+    "start": "node ./bin/www",
+    "heroku-postbuild": "cd client && npm install  && npm install && npm run build"
+  },
+  "engines": {
+    "node": "8.9.2"
+  },
   "dependencies": {
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
