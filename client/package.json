@@ -2,7 +2,7 @@
   "name": "green_screen",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lahaymd.github.io/green_screen/client",
+  "homepage": "https://lahaymd.github.io/green_screen/client/build",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
