@@ -18,17 +18,25 @@ router.post('/', function (req, res) {
     });
 });
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  // res.send('respond with a resource');
-  res.json([{
-    id: 1,
-    username: "samsepi0l"
-  }, {
-    id: 2,
-    username: "D0loresH4ze"
-  }]);
+router.get('/', function (req, res) {
+  GreenScreen.find({}, function (err, docs) {
+    res.json(docs)
+  })
 });
+
+router.put('/', function (req, res) {
+  GreenScreen.findOneAndUpdate({ _id: req.body.id }, req.body.redStart, { new: true }, function (err, docs) {
+    console.log(docs);
+    console.log('updated user')
+    res.json(docs)
+  })
+});
+
+router.delete('/', function (req, res) {
+  GreenScreen.remove({ _id: req.body.id }, function (err, docs) {
+    res.json(docs)
+  });
+})
 
 
 
