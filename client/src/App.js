@@ -18,7 +18,8 @@ import Image from './components/Image';
 class App extends Component {
 
   componentDidMount() {
-
+ console.log('pre fetch');
+ 
   fetch('/green_screen')
     .then(res => res.json())
     .then(data => console.log(data))
