@@ -5,7 +5,7 @@ import { getRGB, getSelectedRGB } from '../actions/postActions';
 
 class SelectMenu extends Component {
 
-    componentDidMount() {
+    componentWillMount() {
         fetch('/rgb')
             .then(res => res.json())
             .then(data => { console.log('fetch' + JSON.stringify(data.map( item => item.rgb[0].name)));
@@ -24,7 +24,7 @@ class SelectMenu extends Component {
 
         return (
             <select onChange={this.handleChange}>
-                <option>fuck you</option>
+                <option selected disabled>CHOOSE STATE</option>
                 {this.props.nameList.map(item => <option key={item}>{item}</option>)}
             </select>
         )
