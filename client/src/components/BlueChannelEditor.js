@@ -14,12 +14,24 @@ class BlueChannelEditor extends Component {
 
     // }
 
+    // handleBlueChange = (e) => {
+    //     console.log('changed' + e.target.value);
+    //     console.log('props ' + JSON.stringify(this.props));
+    //     let a = this.props.b.slice();
+    //     console.log('blue ' + a);
+    //     let blue = a.map((item, index) => index > e.target.value ? item = index / 256 : item = 0)
+
+    //     this.props.updateBlueStart(blue);
+
+    // }
+
     handleBlueChange = (e) => {
         console.log('changed' + e.target.value);
         console.log('props ' + JSON.stringify(this.props));
+
+
         let a = this.props.b.slice();
-        console.log('blue ' + a);
-        let blue = a.map((item, index) => index > e.target.value ? item = index / 256 : item = 0)
+        let blue = a.map((item, index) => { return { blue: (e.target.value  < index  ? index/256 :  0), hovered:  index >= e.target.value && e.target.value != 255  ? false : true } })
 
         this.props.updateBlueStart(blue);
 

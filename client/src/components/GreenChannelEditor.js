@@ -14,16 +14,31 @@ class GreenChannelEditor extends Component {
 
     // }
 
+    // handleGreenChange = (e) => {
+    //     console.log('changed' + e.target.value);
+    //     console.log('props ' + JSON.stringify(this.props));
+    //     let a = this.props.g.slice();
+    //     console.log('a ' + a);
+    //     let b = a.map((item, index) => index > e.target.value ? item = index / 256 : item = 0)
+
+    //     this.props.updateGreenStart(b);
+
+    // }
+
     handleGreenChange = (e) => {
         console.log('changed' + e.target.value);
         console.log('props ' + JSON.stringify(this.props));
+
+
         let a = this.props.g.slice();
         console.log('a ' + a);
-        let b = a.map((item, index) => index > e.target.value ? item = index / 256 : item = 0)
+        let b = a.map((item, index) => { return { green: (e.target.value < index ? index / 256 : 0), hovered: (index >= e.target.value && e.target.value != 255 ? false : true ) } })
+        console.log(`b ${b}`);
 
         this.props.updateGreenStart(b);
 
     }
+
 
 
     render() {

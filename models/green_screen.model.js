@@ -2,7 +2,10 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 var GreenScreen = new Schema({
-    redStart: [Number]
+    redStart: [{
+        red: Number,
+        hovered: Boolean
+    }]
 });
 
 

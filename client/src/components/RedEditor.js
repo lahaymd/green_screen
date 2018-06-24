@@ -16,7 +16,7 @@ class RedEditor extends Component {
         console.log(e.target.id);
         console.log(e);
         
-        e.target.classList.toggle('hovered')
+        // e.target.classList.toggle('hovered')
         // if(
 
         //     document.addEventListener('keydown', e => alert(e.keyCode))
@@ -25,8 +25,8 @@ class RedEditor extends Component {
         let a = this.props.r.slice();
         // console.log('a ' + a);
         // let b = a.map((item, index) => index > e.target.value ? item = index / 256 : item = 0)
-        a.splice(e.target.id, 1, a[e.target.id] === 0 ? e.target.id/256 : 0)
-        console.log(`A ${a}`);
+        a.splice(e.target.id, 1, { red: a[e.target.id].red === 0 ? e.target.id/256 : 0 , hovered: !a[e.target.id].hovered})
+        console.log(`A ${JSON.stringify(a)}`);
         
         this.props.updateRedStart(a);
         
@@ -35,7 +35,9 @@ class RedEditor extends Component {
     render() {
 
         let rgb = this.props.r.map( (item,index) => (
-        <div key={index} id={index} className={'rgb-vals red'} onMouseEnter={this.handleEnter}>{index}</div>))
+            
+            
+        <div key={index} id={index} className={`rgb-vals red  ${item.hovered ? 'hovered' : ''}`} onMouseEnter={this.handleEnter}>{index}</div>))
 
         return (
             <div className='flex-row'>{rgb}</div>

@@ -1,17 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { updateRed } from '../actions/postActions';
 
 class SvgFilter extends Component {
 
-  
-
     componentWillReceiveProps(nextProps) {
         console.log('will ' +JSON.stringify(this.props));
-        
-            // this.props.newRed.unshift(nextProps.newPost);
-        
+        console.log('red start '+JSON.stringify(this.props.redStrt));
+        console.log('red start 1 '+JSON.stringify(this.props.redStrt.map(item =>  item.red)));
+
     }
 
     render() {
@@ -23,15 +20,15 @@ class SvgFilter extends Component {
                     <filter id='greenScreen' colorInterpolationFilters="sRGB">
 
         <feComponentTransfer result='colorToBlack'>
-                            <feFuncR id='funcR' type='discrete' tableValues={this.props.redStrt}/>
-                            <feFuncG id='funcG' type='discrete' tableValues={this.props.greenStrt}/>
-                            <feFuncB id='funcB' type='discrete' tableValues={this.props.blueStrt}/>
+                            <feFuncR id='funcR' type='discrete' tableValues={this.props.redStrt.map(item => item.red)}/>
+                            <feFuncG id='funcG' type='discrete' tableValues={this.props.greenStrt.map(item => item.green)}/>
+                            <feFuncB id='funcB' type='discrete' tableValues={this.props.blueStrt.map(item => item.blue)}/>
         </feComponentTransfer> 
 
       <feColorMatrix in='colorToBlack' result='blackAndWhite' type='matrix' 
-                 values='10 11 10 0 0
-                         10 10 10 0 0
-                         10 10 10 0 0
+                 values='256 256 256 0 0
+                         256 256 256 0 0
+                         256 256 256 0 0
                          0 0 0 1 0'/> 
 
         <feColorMatrix in='blackAndWhite' result='whiteToTransparent' type='matrix' 
@@ -39,8 +36,7 @@ class SvgFilter extends Component {
                          0 1 0 0 0
                          0 0 1 0 0
                         -1 0 0 1 0'/>   
-  <feComposite  operator='out' in='SourceGraphic' in2='whiteToTransparent' />   
-  {/* <feComposite  operator='in' in='SourceGraphic' in2='whiteToTransparent' />    */}
+  <feComposite  operator='out' in='SourceGraphic' in2='whiteToTransparent' />                
 
 			</filter>
                 </defs>
@@ -51,13 +47,10 @@ class SvgFilter extends Component {
 }
 
 const mapStateToProps = state => ({
-    
-    // posts: state.posts.items,
-    // newPost: state.posts.item,
-    newRed: state.posts.red,
+    // newRed: state.posts.red,
     redStrt: state.posts.redStart,
     greenStrt: state.posts.greenStart,
     blueStrt: state.posts.blueStart
 })
 
-export default connect(mapStateToProps, { updateRed })(SvgFilter);
+export default connect(mapStateToProps)(SvgFilter);

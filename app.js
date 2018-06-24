@@ -8,6 +8,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 // var index = require('./routes/index');
 var green_screen = require('./routes/green_screen');
+var rgb = require('./routes/rgb');
 
 var app = express();
 
@@ -26,6 +27,7 @@ app.use(express.static(path.join(__dirname, 'client', 'build')));
 mongoose.connect('mongodb://lahaymd:zz040577@ds127998.mlab.com:27998/mikelahay');
 // app.use('/', index);
 app.use('/green_screen', green_screen);
+app.use('/rgb', rgb);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));

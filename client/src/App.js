@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import {Provider} from 'react-redux';
 import WebCam from './components/WebCam';
-import Posts from './components/Posts';
-import PostForm from './components/Postform';
 import store from './store';
 import SvgFilter from './components/SvgFilter';
 import RedChannelEditor from './components/RedChannelEditor';
@@ -13,12 +11,13 @@ import RedEditor from './components/RedEditor';
 import GreenEditor from './components/GreenEditor';
 import BlueEditor from './components/BlueEditor';
 import Image from './components/Image';
+import SelectMenu from './components/SelectMenu';
+import PostRGBValues from './components/PostRGBValues';
 
 
 class App extends Component {
 
   componentDidMount() {
- console.log('pre fetch');
  
   fetch('/green_screen')
     .then(res => res.json())
@@ -38,10 +37,10 @@ class App extends Component {
           <RedChannelEditor/>
           <GreenChannelEditor/>
           <BlueChannelEditor/>
+          <SelectMenu/>
+          <PostRGBValues/>
           <WebCam/>
           <Image/>
-          {/* <PostForm/>
-          <Posts/> */}
         </div>
       </Provider>
     );

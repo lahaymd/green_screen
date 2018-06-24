@@ -21,7 +21,7 @@ class RedChannelEditor extends Component {
         
         let a = this.props.r.slice();
         console.log('a ' + a);
-       let b = a.map((item,index) => index >= e.target.value  ? item = index/256 : item = 0)
+        let b = a.map((item, index) => { return { red: (e.target.value < index ? index / 256 : 0), hovered: (index >= e.target.value && e.target.value != 255 ? false : true )}})
         console.log(`b ${b}`);
         
         this.props.updateRedStart(b);
