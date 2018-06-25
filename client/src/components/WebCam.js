@@ -54,66 +54,12 @@ class WebCam extends Component {
             });
         }
 
-        // // var funcR = document.querySelector('#funcR');
-        // var funcG = document.querySelector('#funcG');
-        // var funcB = document.querySelector('#funcB');
-        // var a = [];
-        // var b = [];
-        // var c = [];
-
-
-        // // for (var i = 0; i <= 255; i++) {
-        // //     if (i >= 80 && i <= 255) {
-        // //         a.push(0)
-        // //     } else {
-
-        // //         a.push(((i * 1) / 255).toFixed(3))
-        // //     }
-        // // }
-        // // funcR.setAttribute('tableValues', a.join(' '))
-        // // console.log(a)
-        // // console.log(a.length)
-
-
-        // for (var i = 0; i <= 255; i++) {
-        //     if (i >= 180 && i <= 255) {
-        //         c.push(0)
-        //     } else {
-
-        //         c.push(((i * 1) / 255).toFixed(3))
-        //     }
-        // }
-        // funcG.setAttribute('tableValues', c.join(' '))
-        // console.log(c)
-
-
-        // for (var i = 0; i <= 255; i++) {
-        //     if (i >= 180 && i <= 255) {
-        //         b.push(0)
-        //     } else {
-
-        //         b.push(((i * 1) / 255).toFixed(3))
-        //     }
-        // }
-        // funcB.setAttribute('tableValues', b.join(' '))
-        // console.log(b)
-
-        // console.log('loaded after')
-
-        // console.log('a', a)
-        // a.forEach(function (item, index, array) {
-        //     if (item == 1) { console.log(index + 'equal') } else { console.log(index) }
-        // })
-
-
-
-
     }
 
     render() {
 
         return (
-            <video controls autoPlay ></video>
+            <video autoPlay ></video>
         )
     }
 }

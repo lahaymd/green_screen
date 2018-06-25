@@ -5,15 +5,6 @@ import { updateRedStart } from '../actions/postActions';
 
 class RedChannelEditor extends Component {
 
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         redInput: ''
-    //     }
-
-    // }
-
     handleRedChange = (e) => {
         console.log('changed'+ e.target.value);
         console.log('props ' +JSON.stringify(this.props));
@@ -34,7 +25,9 @@ class RedChannelEditor extends Component {
 
 
         return (
-            <input type='range' min="0" max="255"    onChange={this.handleRedChange}/>
+            <label className='slider-label color-red'>RED
+                <input className='range' type='range' min="0" max="255"    onChange={this.handleRedChange}/>
+            </label>
         )
     }
 
@@ -43,9 +36,6 @@ class RedChannelEditor extends Component {
 
 
 const mapStateToProps = state => ({
-    // posts: state.posts.items,
-    // newPost: state.posts.item,
-    // newRed: state.posts.red,
     r: state.posts.redStart
 })
 

@@ -31,16 +31,20 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <SvgFilter/>
-          <RedEditor/>
-          <GreenEditor/>
-          <BlueEditor/>
-          <RedChannelEditor/>
-          <GreenChannelEditor/>
-          <BlueChannelEditor/>
-          <SelectMenu/>
-          <PostRGBValues/>
-          <WebCam/>
-          <Image/>
+          <div className='grid-wrapper'>
+            <div className='inputs'>
+              <RedChannelEditor/>
+              <GreenChannelEditor/>
+              <BlueChannelEditor/>
+              <SelectMenu/>
+              <PostRGBValues/>
+            </div>
+            <RedEditor/>
+            <GreenEditor/>
+            <BlueEditor/>
+            <WebCam/>
+          </div>
+          {/* <Image/> */}
         </div>
       </Provider>
     );

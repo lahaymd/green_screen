@@ -5,26 +5,6 @@ import { updateGreenStart } from '../actions/postActions';
 
 class GreenChannelEditor extends Component {
 
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         redInput: ''
-    //     }
-
-    // }
-
-    // handleGreenChange = (e) => {
-    //     console.log('changed' + e.target.value);
-    //     console.log('props ' + JSON.stringify(this.props));
-    //     let a = this.props.g.slice();
-    //     console.log('a ' + a);
-    //     let b = a.map((item, index) => index > e.target.value ? item = index / 256 : item = 0)
-
-    //     this.props.updateGreenStart(b);
-
-    // }
-
     handleGreenChange = (e) => {
         console.log('changed' + e.target.value);
         console.log('props ' + JSON.stringify(this.props));
@@ -46,7 +26,9 @@ class GreenChannelEditor extends Component {
 
 
         return (
-            <input type='range' min="0" max="255" onChange={this.handleGreenChange} />
+            <label className='slider-label color-green'>GREEN
+                <input className='range' type='range' min="0" max="255" onChange={this.handleGreenChange} />
+            </label>
         )
     }
 
@@ -55,9 +37,6 @@ class GreenChannelEditor extends Component {
 
 
 const mapStateToProps = state => ({
-    // posts: state.posts.items,
-    // newPost: state.posts.item,
-    // newRed: state.posts.red,
     g: state.posts.greenStart
 })
 

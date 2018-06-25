@@ -5,26 +5,6 @@ import { updateBlueStart } from '../actions/postActions';
 
 class BlueChannelEditor extends Component {
 
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         redInput: ''
-    //     }
-
-    // }
-
-    // handleBlueChange = (e) => {
-    //     console.log('changed' + e.target.value);
-    //     console.log('props ' + JSON.stringify(this.props));
-    //     let a = this.props.b.slice();
-    //     console.log('blue ' + a);
-    //     let blue = a.map((item, index) => index > e.target.value ? item = index / 256 : item = 0)
-
-    //     this.props.updateBlueStart(blue);
-
-    // }
-
     handleBlueChange = (e) => {
         console.log('changed' + e.target.value);
         console.log('props ' + JSON.stringify(this.props));
@@ -37,13 +17,14 @@ class BlueChannelEditor extends Component {
 
     }
 
-
     render() {
 
 
 
         return (
-            <input type='range' min="0" max="255" onChange={this.handleBlueChange} />
+            <label className='slider-label color-blue'>BLUE
+                <input className='range' type='range' min="0" max="255" onChange={this.handleBlueChange} />
+            </label>
         )
     }
 
@@ -52,9 +33,6 @@ class BlueChannelEditor extends Component {
 
 
 const mapStateToProps = state => ({
-    // posts: state.posts.items,
-    // newPost: state.posts.item,
-    // newRed: state.posts.red,
     b: state.posts.blueStart
 })
 

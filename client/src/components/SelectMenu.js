@@ -9,7 +9,6 @@ class SelectMenu extends Component {
         fetch('/rgb')
             .then(res => res.json())
             .then(data => { console.log('fetch' + JSON.stringify(data.map( item => item.rgb[0].name)));
-                // const list = data.map(item => item.rgb[0].name)
                 this.props.getRGB()
             })
     }
@@ -23,7 +22,7 @@ class SelectMenu extends Component {
     render() {
 
         return (
-            <select onChange={this.handleChange}>
+            <select className='select' onChange={this.handleChange}>
                 <option selected disabled>CHOOSE STATE</option>
                 {this.props.nameList.map(item => <option key={item}>{item}</option>)}
             </select>

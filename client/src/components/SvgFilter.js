@@ -15,7 +15,7 @@ class SvgFilter extends Component {
 
         return(
 
-            <svg width='0' height='0'>
+            <svg width='0' height='0' id='svg-filter'>
                 <defs>
                     <filter id='greenScreen' colorInterpolationFilters="sRGB">
 
@@ -47,7 +47,6 @@ class SvgFilter extends Component {
 }
 
 const mapStateToProps = state => ({
-    // newRed: state.posts.red,
     redStrt: state.posts.redStart,
     greenStrt: state.posts.greenStart,
     blueStrt: state.posts.blueStart
