@@ -29,15 +29,14 @@ class PostRGBValues extends Component {
     
     render() {
         const labelStyle = {color: 'black'}
-        const buttonStyle = { background: 'grey', height: '30px', fontWeight: 700}
-        const inputStyle = {height:'20px', margin: '2px', marginTop: '-2px'}
+        const buttonStyle = { background: 'grey', fontSize: '30px', fontWeight: 700}
+        // const inputStyle = {height:'20px', margin: '2px', marginTop: '-2px'}
 
         return (
             <div className='post-wrapper'>
-                <label style={labelStyle}>NAME
-                <input type='text' style={inputStyle} value={this.props.name} onChange={this.handleNameChange}/>
-                </label>
-                <button style={buttonStyle} onClick={this.handleRGBPost}>POST RGB VALUES</button>
+                <label style={labelStyle}>NAME</label>
+                <input type='text'  value={this.props.name} onChange={this.handleNameChange}/>
+                <button style={buttonStyle} onClick={this.handleRGBPost}>POST</button>
             </div>
         )
     }

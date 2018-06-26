@@ -13,9 +13,14 @@ body {
                       'blue inputs';
   grid-gap: 20px;
   width: 100vw;
-  
+}
 
-
+.rgb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 100px;
+  width: 100%;
 }
 
 .inputs {
@@ -49,10 +54,12 @@ video, img {
 }
 
 .post-wrapper {
-  display: inline-block;
-  font-weight: 700;
+  display: grid;
+ grid-template-columns: max-content max-content 1fr;  
+ grid-gap: 5px;
+ font-weight: 700;
   font-size: 30px;
-  
+  margin: 20px;
 }
 
 .rgb-vals {
